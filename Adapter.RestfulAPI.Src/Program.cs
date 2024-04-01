@@ -2,11 +2,8 @@ using System.Text.Json.Serialization;
 using Adapter.RestfulAPI.Src.Extensions;
 using Adapter.RestfulAPI.Src.IoC;
 using Domain.Services.AutoMapper;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Mvc.Versioning;
-using Microsoft.Identity.Web;
 
-using Microsoft.Extensions.DependencyInjection;
 using Postgres.Config;
 
 
