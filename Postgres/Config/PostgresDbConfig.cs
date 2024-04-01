@@ -1,3 +1,4 @@
+using System.Reflection;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -11,7 +12,7 @@ public static class PostgresDbConfig
     {
         services.AddDbContext<PostgresDbContext>(options =>
         {
-            options.UseNpgsql("Server=localhost; Port=5433; User ID=postgres; Password=example; Database=test; Pooling=true;");
+            options.UseNpgsql(configuration.GetConnectionString("DefaultConnection"));
 
             if (isProduction) return;
 

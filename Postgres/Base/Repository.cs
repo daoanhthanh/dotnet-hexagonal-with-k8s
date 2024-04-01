@@ -68,6 +68,6 @@ public abstract class Repository<TEntity> : IRepository<TEntity>
 
     private IQueryable<TEntity> ApplySpecification(ISpecification<TEntity> spec)
     {
-        return SpecificationEvaluator<TEntity>.GetQuery(_dbSet.AsQueryable(), spec);
+        return SpecificationEvaluator<TEntity>.GetQuery(_dbSet.AsQueryable()!, spec);
     }
 }

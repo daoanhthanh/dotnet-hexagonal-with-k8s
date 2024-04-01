@@ -11,7 +11,7 @@ public class AutoMapperConfig : Profile
     public AutoMapperConfig()
     {
         CreateModelsToViewModels();
-        CreateViewModelsToModels();
+        CreateFormModelsToModels();
     }
 
     private void CreateModelsToViewModels()
@@ -24,7 +24,7 @@ public class AutoMapperConfig : Profile
             );
     }
 
-    private void CreateViewModelsToModels()
+    private void CreateFormModelsToModels()
     {
         CreateMap<UserViewModel, DomainModel.User>();
     }
