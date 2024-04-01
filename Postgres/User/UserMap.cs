@@ -8,14 +8,20 @@ public class UserMap : IEntityTypeConfiguration<DomainModel.User>
 {
     public void Configure(EntityTypeBuilder<DomainModel.User> builder)
     {
+        builder.HasKey(e => e.Id);
+
         builder.Property(c => c.Id)
-            .HasColumnName("Id");
+            .HasColumnName("Id")
+            .HasConversion(id => id.Value,
+                value => new DomainModel.UserId(value)
+            );
+
 
         builder.Property(c => c.Name)
             .HasColumnType("varchar(100)")
             .HasMaxLength(100)
             .IsRequired();
-        
+
         builder.Property(c => c.Role)
             .HasColumnType("varchar(100)")
             .HasMaxLength(100)

@@ -2,6 +2,7 @@ using Adapter.RestfulAPI.Src.V1.User.Base;
 using In.Bus;
 using In.Notification;
 using In.User;
+using In.User.DTOs;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -16,10 +17,11 @@ public class GetAllUserController(
         )
 {
     [HttpGet]
-    public string Get()
+    public IEnumerable<UserViewModel> Get()
     {
-        Console.WriteLine("ahihihihihihihih");
-        return "sdcdc";
+        var result = getAllUser.Get();
+        
+        return result;
         // return Response(_getAllUser.Get());
     }
 }

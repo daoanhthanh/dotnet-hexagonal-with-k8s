@@ -10,7 +10,7 @@ public abstract class GetAllUser : IEntityMapper
     public abstract IMapper Mapper { get; }
 
 
-    protected abstract IQueryable<DomainModel.User> GetAll();
+    protected abstract IQueryable<DomainModel.User?> GetAll();
 
     public IEnumerable<UserViewModel> Get()
     {

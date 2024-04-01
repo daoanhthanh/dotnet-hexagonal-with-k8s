@@ -10,7 +10,7 @@ public class GetAllUserService(
 {
     public override IMapper Mapper { get; } = mapper;
 
-    protected override IQueryable<Core.User.Models.User> GetAll()
+    protected override IQueryable<Core.User.Models.User?> GetAll()
     {
        return userRepo.GetAll();
     }

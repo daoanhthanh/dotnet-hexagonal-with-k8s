@@ -9,7 +9,7 @@ public abstract class Repository<TEntity> : IRepository<TEntity>
 {
 // #pragma warning disable SA1401 // Fields should be private
     protected readonly DbContext _db;
-    protected readonly DbSet<TEntity> _dbSet;
+    protected readonly DbSet<TEntity?> _dbSet;
 // #pragma warning restore SA1401 // Fields should be private
 
     public Repository(DbContext context)
@@ -18,19 +18,20 @@ public abstract class Repository<TEntity> : IRepository<TEntity>
         _dbSet = _db.Set<TEntity>();
     }
 
-    public virtual void Add(TEntity obj)
+    public virtual void Add(TEntity? obj)
     {
         _dbSet.Add(obj);
     }
 
-    public virtual TEntity GetById(Guid id)
+    public virtual TEntity? GetById(Guid id)
     {
         return _dbSet.Find(id);
     }
 
-    public virtual IQueryable<TEntity> GetAll()
+    public virtual IQueryable<TEntity?> GetAll()
     {
-        return _dbSet;
+        _dbSet.AsNoTracking();
+        return _dbSet.AsQueryable();
     }
 
     public virtual IQueryable<TEntity> GetAll(ISpecification<TEntity> spec)
@@ -38,13 +39,13 @@ public abstract class Repository<TEntity> : IRepository<TEntity>
         return ApplySpecification(spec);
     }
 
-    public virtual IQueryable<TEntity> GetAllSoftDeleted()
+    public virtual IQueryable<TEntity?> GetAllSoftDeleted()
     {
         return _dbSet.IgnoreQueryFilters()
             .Where(e => EF.Property<bool>(e, "IsDeleted") == true);
     }
 
-    public virtual void Update(TEntity obj)
+    public virtual void Update(TEntity? obj)
     {
         _dbSet.Update(obj);
     }

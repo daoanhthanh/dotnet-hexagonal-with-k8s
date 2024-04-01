@@ -11,7 +11,7 @@ public static class PostgresDbConfig
     {
         services.AddDbContext<PostgresDbContext>(options =>
         {
-            options.UseNpgsql(configuration.GetConnectionString("DefaultConnection"));
+            options.UseNpgsql("Server=localhost; Port=5433; User ID=postgres; Password=example; Database=test; Pooling=true;");
 
             if (isProduction) return;
 

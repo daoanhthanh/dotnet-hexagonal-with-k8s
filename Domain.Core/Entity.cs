@@ -54,7 +54,3 @@ public abstract class Entity
         return GetType().Name + " [Id=" + Id + "]";
     }
 }
-
-class EntityImpl : Entity
-{
-}
