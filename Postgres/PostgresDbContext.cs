@@ -6,14 +6,10 @@ using DomainModel = Domain.Core.User.Models;
 
 namespace Postgres;
 
-public class PostgresDbContext : DbContext
+public class PostgresDbContext(DbContextOptions<PostgresDbContext> options, DbSet<DomainModel.User> users)
+    : DbContext(options)
 {
-    public PostgresDbContext(DbContextOptions<PostgresDbContext> options)
-        : base(options)
-    {
-    }
-
-    public DbSet<DomainModel.User> Users { get; set; }
+    public DbSet<DomainModel.User> Users { get; set; } = users;
 
 
     public override int SaveChanges(bool acceptAllChangesOnSuccess)
