@@ -33,7 +33,7 @@ public static class SwaggerExtension
                 // {
                 //     Description = "JWT Authorization header using the Bearer scheme. Example: \"Authorization: Bearer {token}\"",
                 //     Name = "Authorization",
-                //     In = ParameterLocation.Header,
+                //     Application.Ports.In = ParameterLocation.Header,
                 //     Type = SecuritySchemeType.ApiKey,
                 //     Scheme = "Bearer",
                 // });
@@ -50,7 +50,7 @@ public static class SwaggerExtension
                 //             },
                 //             Scheme = "oauth2",
                 //             Name = "Bearer",
-                //             In = ParameterLocation.Header,
+                //             Application.Ports.In = ParameterLocation.Header,
                 //         },
                 //         new List<string>()
                 //

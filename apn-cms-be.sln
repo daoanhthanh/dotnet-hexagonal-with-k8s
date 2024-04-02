@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{79FF562F-751D-45B6-81B6-704A59EBB575}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Adapter", "Adapter", "{02E255E5-79A0-43FD-B572-109ACC88A396}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RestfulAPI", "RestfulAPI", "{61A4A172-8DD7-48CC-B04A-8683FFF766F4}"
@@ -17,23 +15,23 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{C41F5FD1-E791-4CAE-B07D-93005AE7538A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain.Core", "Domain.Core\Domain.Core.csproj", "{D89B5946-CB6D-4FD6-ABC7-3DD0C54F0F7E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application.Domain.Core", "Application.Domain.Core\Application.Domain.Core.csproj", "{D89B5946-CB6D-4FD6-ABC7-3DD0C54F0F7E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ports", "Ports", "{5549909E-E14F-43C1-8312-73D10A730AFE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "In", "In\In.csproj", "{A492B33B-55D1-4159-89D8-40499AD8B410}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application.Ports.In", "Application.Ports.In\Application.Ports.In.csproj", "{A492B33B-55D1-4159-89D8-40499AD8B410}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Out", "Out\Out.csproj", "{D70096FB-174F-4AB3-9F29-7D174194BE64}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application.Ports.Out", "Application.Ports.Out\Application.Ports.Out.csproj", "{D70096FB-174F-4AB3-9F29-7D174194BE64}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{35A9CF6E-AA0E-4D49-BCE5-B9B8D6BAFF30}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain.Services", "Domain.Services\Domain.Services.csproj", "{5154FC43-7D93-428B-BC0C-6B1992EE20C3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application.Services", "Application.Services\Application.Services.csproj", "{5154FC43-7D93-428B-BC0C-6B1992EE20C3}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Database", "Database", "{7BA4522F-69D5-411B-8A9C-7523FA929C0B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Postgres", "Postgres\Postgres.csproj", "{3F8C2D45-F925-40B1-A4ED-671907AE970C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adapter.Database.Postgres", "Adapter.Database.Postgres\Adapter.Database.Postgres.csproj", "{3F8C2D45-F925-40B1-A4ED-671907AE970C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CLI.Migration", "CLI.Migration\CLI.Migration.csproj", "{307D84FA-18C9-41B8-BFA0-8072F2C56F89}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adapter.CLI.Migration", "Adapter.CLI.Migration\Adapter.CLI.Migration.csproj", "{307D84FA-18C9-41B8-BFA0-8072F2C56F89}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

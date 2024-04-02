@@ -1,8 +1,8 @@
 using Adapter.RestfulAPI.Src.V1.User.Base;
-using In.Bus;
-using In.Notification;
-using In.User;
-using In.User.DTOs;
+using Application.Ports.In.Bus;
+using Application.Ports.In.Notification;
+using Application.Ports.In.User;
+using Application.Ports.In.User.DTOs;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 

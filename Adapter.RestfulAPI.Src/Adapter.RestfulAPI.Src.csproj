@@ -31,9 +31,9 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Domain.Services\Domain.Services.csproj" />
-      <ProjectReference Include="..\In\In.csproj" />
-      <ProjectReference Include="..\Postgres\Postgres.csproj" />
+      <ProjectReference Include="..\Application.Services\Application.Services.csproj" />
+      <ProjectReference Include="..\Application.Ports.In\Application.Ports.In.csproj" />
+      <ProjectReference Include="..\Adapter.Database.Postgres\Adapter.Database.Postgres.csproj" />
     </ItemGroup>
 
 </Project>

@@ -1,5 +1,5 @@
-using In.Bus;
-using In.Notification;
+using Application.Ports.In.Bus;
+using Application.Ports.In.Notification;
 using MediatR;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;

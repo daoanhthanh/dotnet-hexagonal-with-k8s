@@ -1,10 +1,10 @@
 using System.Text.Json.Serialization;
 using Adapter.RestfulAPI.Src.Extensions;
 using Adapter.RestfulAPI.Src.IoC;
-using Domain.Services.AutoMapper;
+using Application.Services.AutoMapper;
 using Microsoft.AspNetCore.Mvc.Versioning;
 
-using Postgres.Config;
+using Adapter.Database.Postgres.Config;
 
 
 var builder = WebApplication.CreateBuilder(args);
