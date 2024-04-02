@@ -6,7 +6,7 @@ using DomainModel = Application.Domain.Core.User.Models;
 
 namespace Adapter.Database.Postgres;
 
-public class PostgresDbContext(DbContextOptions<PostgresDbContext> options)
+public class PostgresRootDbContext(DbContextOptions<PostgresRootDbContext> options)
     : DbContext(options)
 {
     

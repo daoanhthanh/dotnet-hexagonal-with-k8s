@@ -9,11 +9,12 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="MediatR" Version="12.2.0" />
+        <PackageReference Include="Hocon.Extensions.Configuration" Version="2.0.4"/>
+        <PackageReference Include="MediatR" Version="12.2.0"/>
         <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.3" NoWarn="NU1605"/>
         <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="8.0.3" NoWarn="NU1605"/>
-        <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning" Version="5.1.0" />
-        <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer" Version="5.1.0" />
+        <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning" Version="5.1.0"/>
+        <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer" Version="5.1.0"/>
         <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.3"/>
         <PackageReference Include="Microsoft.Identity.Web" Version="2.15.2"/>
         <PackageReference Include="Microsoft.Identity.Web.DownstreamApi" Version="2.15.2"/>
@@ -21,19 +22,16 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Content Include="..\.dockerignore">
-        <Link>.dockerignore</Link>
-      </Content>
+        <Folder Include="V2\"/>
+        <Content Include="./*.conf" Exclude="./*.Local.conf">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="V2\" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <ProjectReference Include="..\Application.Services\Application.Services.csproj" />
-      <ProjectReference Include="..\Application.Ports.In\Application.Ports.In.csproj" />
-      <ProjectReference Include="..\Adapter.Database.Postgres\Adapter.Database.Postgres.csproj" />
+        <ProjectReference Include="..\Application.Services\Application.Services.csproj"/>
+        <ProjectReference Include="..\Application.Ports.In\Application.Ports.In.csproj"/>
+        <ProjectReference Include="..\Adapter.Database.Postgres\Adapter.Database.Postgres.csproj"/>
     </ItemGroup>
 
 </Project>

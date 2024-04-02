@@ -23,7 +23,7 @@ internal static class Program
 
         IConfiguration conf = builder.Build();
 
-        return conf.GetConnectionString("DefaultConnection");
+        return conf.GetConnectionString("RootConnection");
     }
 
     private static int Main(string[] args)

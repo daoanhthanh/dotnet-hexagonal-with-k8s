@@ -1,6 +1,6 @@
 using AutoMapper;
 using DomainModel = Application.Domain.Core.User.Models;
-using Application.Ports.In.User.DTOs;
+using Application.Ports.In .User.DTOs;
 
 namespace Application.Services.AutoMapper;
 

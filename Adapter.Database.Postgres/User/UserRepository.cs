@@ -6,7 +6,7 @@ using DomainModel = Application.Domain.Core.User.Models;
 
 namespace Adapter.Database.Postgres.User;
 
-public class UserRepository(PostgresDbContext context) : Repository<DomainModel.User>(context), IUserRepository
+public class UserRepository(PostgresRootDbContext context) : Repository<DomainModel.User>(context), IUserRepository
 {
     public DomainModel.User? GetByEmail(string email)
     {

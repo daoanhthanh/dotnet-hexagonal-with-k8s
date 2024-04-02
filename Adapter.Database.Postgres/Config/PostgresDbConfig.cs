@@ -1,4 +1,3 @@
-using System.Reflection;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -10,9 +9,9 @@ public static class PostgresDbConfig
     public static IServiceCollection AddPostgresDatabase(this IServiceCollection services,
         IConfiguration configuration, bool isProduction)
     {
-        services.AddDbContext<PostgresDbContext>(options =>
+        services.AddDbContext<PostgresRootDbContext>(options =>
         {
-            options.UseNpgsql(configuration.GetConnectionString("DefaultConnection"));
+            options.UseNpgsql(configuration.GetConnectionString("RootConnection"));
 
             if (isProduction) return;
 

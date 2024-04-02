@@ -2,7 +2,7 @@ using Application.Domain.Core.Interfaces;
 
 namespace Adapter.Database.Postgres.Base;
 
-public class UnitOfWork(PostgresDbContext context) : IUnitOfWork
+public class UnitOfWork(PostgresRootDbContext context) : IUnitOfWork
 {
     public bool Commit()
     {
