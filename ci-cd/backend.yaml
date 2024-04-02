@@ -1,0 +1,41 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: deployment-ns
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: csharp-backend
+  namespace: deployment-ns
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: csharp-backend
+  template:
+    metadata:
+      labels:
+        app: csharp-backend
+    spec:
+      containers:
+        - name: csharp-backend
+          image: production:v1
+          imagePullPolicy: "Never" # Change to "Always" in production
+          ports:
+            - containerPort: 8080
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: csharp-backend
+  namespace: deployment-ns
+spec:
+  type: LoadBalancer
+  ports:
+    - port: 80
+      targetPort: 8080
+  selector:
+    app: csharp-backend
