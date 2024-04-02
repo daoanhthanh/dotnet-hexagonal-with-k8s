@@ -27,6 +27,8 @@ builder.Services.AddAutoMapper(typeof(AutoMapperConfig));
 // ----- Database Config -----
 builder.Services.AddPostgresDatabase(builder.Configuration, builder.Environment.IsProduction());
 
+Console.WriteLine($"Current environment: {builder.Environment.EnvironmentName}");
+
 // ----- Versioning -----
 builder.Services.AddApiVersioning(opt =>
 {

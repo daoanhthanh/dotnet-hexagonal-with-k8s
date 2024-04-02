@@ -1,20 +1,15 @@
-FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build-env
+FROM mcr.microsoft.com/dotnet/sdk:8.0-jammy AS build-env
 WORKDIR /App
 
-# Copy everything
-COPY ./Adapter.RestfulAPI.Src/bin ./Adapter.RestfulAPI.Src/bin
-COPY ./CLI.Migration/bin ./CLI.Migration/bin
-COPY ./Domain.Core/bin ./Domain.Core/bin
-COPY ./Domain.Services/bin ./Domain.Services/bin
-COPY ./In/bin ./In/bin
-COPY ./Out/bin ./Out/bin
-# Restore as distinct layers
+COPY . ./
 RUN dotnet restore
-# Build and publish a release
+# TODO: use `--property:PublishDir=out` instead of `-o out`, then copy all output to /out
 RUN dotnet publish -c Release -o out
 
-# Build runtime image
-FROM mcr.microsoft.com/dotnet/aspnet:8.0
+FROM mcr.microsoft.com/dotnet/aspnet:8.0-jammy-chiseled-composite
+EXPOSE 8080
 WORKDIR /App
+ARG ENV=Production
 COPY --from=build-env /App/out .
-ENTRYPOINT ["dotnet", "DotNet.Docker.dll"]
+ENV ASPNETCORE_ENVIRONMENT=${ENV}
+ENTRYPOINT ["dotnet", "Adapter.RestfulAPI.Src.dll"]
