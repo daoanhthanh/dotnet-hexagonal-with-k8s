@@ -23,6 +23,16 @@ internal static class Program
 
         IConfiguration conf = builder.Build();
 
+        var connectionString = conf.GetConnectionString("RootConnection");
+
+        Console.WriteLine($"This Connectionstring: {connectionString}");
+
+        if (string.IsNullOrEmpty(connectionString))
+        {
+            Console.WriteLine("Connection string not found in appSettings.json, application will now exit.");
+            return null;
+        }
+
         return conf.GetConnectionString("RootConnection");
     }
 

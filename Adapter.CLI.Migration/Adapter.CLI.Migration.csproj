@@ -28,6 +28,9 @@
     
     <ItemGroup>
         <EmbeddedResource Include="Scripts/*.sql"/>
+        <Content Include="./*.json" Exclude="./*.Local.json">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
     </ItemGroup>
 
 </Project>

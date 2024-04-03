@@ -10,7 +10,7 @@ metadata:
   name: csharp-backend
   namespace: deployment-ns
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: csharp-backend
@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
         - name: csharp-backend
-          image: production:v1
+          image: production:v2
           imagePullPolicy: "Never" # Change to "Always" in production
           ports:
             - containerPort: 8080
