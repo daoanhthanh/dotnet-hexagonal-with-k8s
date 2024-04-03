@@ -10,7 +10,7 @@ metadata:
   name: csharp-backend
   namespace: deployment-ns
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
       app: csharp-backend
