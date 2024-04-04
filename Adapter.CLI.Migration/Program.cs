@@ -1,6 +1,5 @@
 ﻿using System.Reflection;
 using DbUp;
-using DbUp.ScriptProviders;
 using Microsoft.Extensions.Configuration;
 
 namespace Adapter.CLI.Migration;

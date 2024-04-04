@@ -9,7 +9,7 @@ namespace Adapter.RestfulAPI.Src.V1.User.Base;
 
 // [Authorize]
 [ApiVersion("1.0")]
-[ControllerName("users")]
+[Route("api/v{version:apiVersion}/users")]
 [Produces("application/json")]
 public abstract class UserV1Controller(
     // INotificationHandler<DomainNotificationDTO> notifications,

@@ -7,7 +7,6 @@ using Microsoft.AspNetCore.Mvc;
 namespace Adapter.RestfulAPI.Src.Base;
 
 [ApiController]
-[Route("api/v{version:apiVersion}/[controller]")]
 public class RestfulControllerBase : ControllerBase
 {
     // private readonly DomainNotificationHandler _notifications;
