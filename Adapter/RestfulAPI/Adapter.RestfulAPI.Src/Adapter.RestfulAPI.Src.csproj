@@ -29,9 +29,9 @@
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\Application.Services\Application.Services.csproj"/>
-        <ProjectReference Include="..\Application.Ports.In\Application.Ports.In.csproj"/>
-        <ProjectReference Include="..\Adapter.Database.Postgres\Adapter.Database.Postgres.csproj"/>
+      <ProjectReference Include="..\..\..\Application\Application.Ports.In\Application.Ports.In.csproj" />
+      <ProjectReference Include="..\..\..\Application\Application.Services\Application.Services.csproj" />
+      <ProjectReference Include="..\..\Database\Adapter.Database.Postgres\Adapter.Database.Postgres.csproj" />
     </ItemGroup>
 
 </Project>

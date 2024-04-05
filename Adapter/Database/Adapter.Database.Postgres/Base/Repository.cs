@@ -1,5 +1,5 @@
-using Microsoft.EntityFrameworkCore;
 using Application.Domain.Core.Interfaces;
+using Microsoft.EntityFrameworkCore;
 
 namespace Adapter.Database.Postgres.Base;
 
