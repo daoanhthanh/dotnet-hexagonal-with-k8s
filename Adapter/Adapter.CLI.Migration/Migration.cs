@@ -4,7 +4,7 @@ using Microsoft.Extensions.Configuration;
 
 namespace Adapter.CLI.Migration;
 
-internal static class Program
+public static class Migration
 {
     private static string? GetConnectionString(string[] args)
     {
@@ -33,6 +33,11 @@ internal static class Program
         }
 
         return conf.GetConnectionString("RootConnection");
+    }
+
+    public static int Start(string[] args)
+    {
+        return Main(args);
     }
 
     private static int Main(string[] args)

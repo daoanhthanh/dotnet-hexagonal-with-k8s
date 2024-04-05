@@ -64,6 +64,9 @@ public class Startup
         });
 
         services.AddEndpointsApiExplorer();
+        
+        // ----- Migrate database -----
+        services.MigrateDatabase(_configuration.GetConnectionString("RootConnection"));
     }
 
     public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

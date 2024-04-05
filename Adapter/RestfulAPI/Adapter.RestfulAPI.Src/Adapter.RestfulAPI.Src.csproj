@@ -31,6 +31,7 @@
     <ItemGroup>
       <ProjectReference Include="..\..\..\Application\Application.Ports.In\Application.Ports.In.csproj" />
       <ProjectReference Include="..\..\..\Application\Application.Services\Application.Services.csproj" />
+      <ProjectReference Include="..\..\Adapter.CLI.Migration\Adapter.CLI.Migration.csproj" />
       <ProjectReference Include="..\..\Database\Adapter.Database.Postgres\Adapter.Database.Postgres.csproj" />
     </ItemGroup>
 
